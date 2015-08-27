@@ -23,6 +23,12 @@ namespace SwitchSilver
         public Page1()
         {
             InitializeComponent();
+            //study4DataSet data = this.FindResource("study4DataSet") as study4DataSet;
+            foreach (var x in this.Resources)
+            {
+                tbx.Text += x.ToString() + "\n";
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
