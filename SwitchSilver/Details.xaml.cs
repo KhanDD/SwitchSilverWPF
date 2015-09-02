@@ -20,9 +20,10 @@ namespace SwitchSilver
     /// </summary>
     public partial class Details : Page
     {
-        public Details()
+        public Details(SwitchSilver.study4DataSet.PapersRow paper)
         {
             InitializeComponent();
+            this.DataContext = paper;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
