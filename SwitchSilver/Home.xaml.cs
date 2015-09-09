@@ -164,25 +164,28 @@ namespace SwitchSilver
                 box.ItemsSource = y1s2;
             }
 
+
+
             // Year Two Semester One
             List<string> papersfromyearone = new List<string>();
             for (int i = 0; i < 4; i++)
             {
-                if (YearOneSemsterOne[i].SelectedItem is study4DataSet.PapersRow && YearThreeSemesterOneCompleted[i].IsChecked == false || YearThreeSemesterOnePassed[i].IsChecked == true) 
+                if (YearOneSemsterOne[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterOneCompleted[i].IsChecked == false || YearOneSemesterOnePassed[i].IsChecked == true))
                 {
                     papersfromyearone.Add((YearOneSemsterOne[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
                 }
 
-                if (YearOneSemsterOne[i].SelectedItem is study4DataSet.PapersRow && YearThreeSemesterTwoCompleted[i].IsChecked == false || YearThreeSemesterTwoPassed[i].IsChecked == true)
+                if (YearOneSemsterTwo[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterTwoCompleted[i].IsChecked == false || YearOneSemesterTwoPassed[i].IsChecked == true))
                 {
-                    papersfromyearone.Add((YearOneSemsterOne[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
+                    papersfromyearone.Add((YearOneSemsterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
                 }
             }
 
             List<SwitchSilver.study4DataSet.PapersRow> y2s1 = new List<study4DataSet.PapersRow>();
+            
             foreach (var paper in papersDataSet.Papers)
             {
-                if (paper.Year < 2 && Semester1.Contains(paper.Paper_ID))// && /*(papersfromyearone.Contains(paper.Prerequisite) ||*/ paper.Prerequisite == "")
+                if (paper.Year <= 2 && Semester1.Contains(paper.Paper_ID) && !papersfromyearone.Contains(paper.Paper_ID) && (papersfromyearone.Contains(paper.Prerequisite) || paper.Prerequisite == "N/A"))
                 {
                     y2s1.Add(paper);
                 }
@@ -232,7 +235,61 @@ namespace SwitchSilver
                     // Sets the combobox's item source to the list so that it displays the new list of papers
                     box.ItemsSource = papers;
                 }
+
             }
+
+            // TEST
+
+            study4DataSet papersDataSet = new study4DataSet();
+            //this.Resources
+            study4DataSetTableAdapters.PapersTableAdapter paperTableAdapter = new study4DataSetTableAdapters.PapersTableAdapter();
+            paperTableAdapter.Fill(papersDataSet.Papers);
+
+            study4DataSetTableAdapters.Paper_SemesterTableAdapter paperSemesterTableAdapater = new study4DataSetTableAdapters.Paper_SemesterTableAdapter();
+            paperSemesterTableAdapater.Fill(papersDataSet.Paper_Semester);
+            //CollectionViewSource paperViewSource = new CollectionViewSource();//(CollectionViewSource)(this.FindResource("papersViewSource"));
+            //paperViewSource.View.MoveCurrentToFirst();
+
+            // Gets the ids of the papers available in semester one
+            var Semester1 = from x in papersDataSet.Paper_Semester
+                            where x.Semester == 1
+                            select x.Paper_ID;
+
+
+            // Gets the ids of the papers available in semester two
+            var Semester2 = from x in papersDataSet.Paper_Semester
+                            where x.Semester == 2
+                            select x.Paper_ID;
+
+            // Year Two Semester One
+            List<string> papersfromyearone = new List<string>();
+            for (int i = 0; i < 4; i++)
+            {
+                if (YearOneSemsterOne[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterOneCompleted[i].IsChecked == false || YearOneSemesterOnePassed[i].IsChecked == true))
+                {
+                    papersfromyearone.Add((YearOneSemsterOne[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
+                }
+
+                if (YearOneSemsterTwo[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterTwoCompleted[i].IsChecked == false || YearOneSemesterTwoPassed[i].IsChecked == true))
+                {
+                    papersfromyearone.Add((YearOneSemsterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
+                }
+            }
+
+            List<SwitchSilver.study4DataSet.PapersRow> y2s1 = new List<study4DataSet.PapersRow>();
+
+            foreach (var paper in papersDataSet.Papers)
+            {
+                if (paper.Year <= 2 && Semester1.Contains(paper.Paper_ID) && !papersfromyearone.Contains(paper.Paper_ID) && (papersfromyearone.Contains(paper.Prerequisite) || paper.Prerequisite == "N/A"))
+                {
+                    y2s1.Add(paper);
+                }
+            }
+            foreach (var box in YearTwoSemsterOne)
+            {
+                box.ItemsSource = y2s1;
+            }
+
         }
         
         /// <summary>
@@ -275,6 +332,64 @@ namespace SwitchSilver
                     box.ItemsSource = papers;
                 }
             }
+
+
+            // TEST
+
+            study4DataSet papersDataSet = new study4DataSet();
+            //this.Resources
+            study4DataSetTableAdapters.PapersTableAdapter paperTableAdapter = new study4DataSetTableAdapters.PapersTableAdapter();
+            paperTableAdapter.Fill(papersDataSet.Papers);
+
+            study4DataSetTableAdapters.Paper_SemesterTableAdapter paperSemesterTableAdapater = new study4DataSetTableAdapters.Paper_SemesterTableAdapter();
+            paperSemesterTableAdapater.Fill(papersDataSet.Paper_Semester);
+            //CollectionViewSource paperViewSource = new CollectionViewSource();//(CollectionViewSource)(this.FindResource("papersViewSource"));
+            //paperViewSource.View.MoveCurrentToFirst();
+
+            // Gets the ids of the papers available in semester one
+            var Semester1 = from x in papersDataSet.Paper_Semester
+                            where x.Semester == 1
+                            select x.Paper_ID;
+
+
+            // Gets the ids of the papers available in semester two
+            var Semester2 = from x in papersDataSet.Paper_Semester
+                            where x.Semester == 2
+                            select x.Paper_ID;
+
+            // Year Two Semester One
+            List<string> papersfromyearone = new List<string>();
+            for (int i = 0; i < 4; i++)
+            {
+                if (YearOneSemsterOne[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterOneCompleted[i].IsChecked == false || YearOneSemesterOnePassed[i].IsChecked == true))
+                {
+                    papersfromyearone.Add((YearOneSemsterOne[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
+                }
+
+                if (YearOneSemsterTwo[i].SelectedItem is study4DataSet.PapersRow && (YearOneSemesterTwoCompleted[i].IsChecked == false || YearOneSemesterTwoPassed[i].IsChecked == true))
+                {
+                    papersfromyearone.Add((YearOneSemsterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
+                }
+            }
+
+            List<SwitchSilver.study4DataSet.PapersRow> y2s1 = new List<study4DataSet.PapersRow>();
+
+            foreach (var paper in papersDataSet.Papers)
+            {
+                if (paper.Year <= 2 && Semester1.Contains(paper.Paper_ID) && !papersfromyearone.Contains(paper.Paper_ID) && (papersfromyearone.Contains(paper.Prerequisite) || paper.Prerequisite == "N/A"))
+                {
+                    y2s1.Add(paper);
+                }
+            }
+            foreach (var box in YearTwoSemsterOne)
+            {
+                box.ItemsSource = y2s1;
+            }
+        }
+
+        private void checkBox1_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
