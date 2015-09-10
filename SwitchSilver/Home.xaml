@@ -119,56 +119,56 @@
 
         <!-- Year Two -->
         <!-- Year Two Semester One Paper 1-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx9" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y2s1SelectionChanged"  IsSynchronizedWithCurrentItem="False" x:Name="cbx9" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass9" Content="Pass" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="1" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox9" Content="Completed" Grid.Column="1" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="1"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx9}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Two Semester One Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx10" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y2s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx10" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass10" Content="Pass" Grid.Column="2" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="2" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox10" Content="Completed" Grid.Column="2" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="2"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx10}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester One Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx11" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester One Paper 3-->
+        <ComboBox SelectionChanged="y2s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx11" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass11" Content="Pass" Grid.Column="3" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="3" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox11" Content="Completed" Grid.Column="3" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="3"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx11}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester One Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx12" Grid.Column="4" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester One Paper 4-->
+        <ComboBox SelectionChanged="y2s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx12" Grid.Column="4" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass12" Content="Pass" Grid.Column="4" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="4" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox12" Content="Completed" Grid.Column="4" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="4"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx12}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester Two Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx13" Grid.Column="5" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester Two Paper 5-->
+        <ComboBox SelectionChanged="y2s2SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx13" Grid.Column="5" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass13" Content="Pass" Grid.Column="5" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="5" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox13" Content="Completed" Grid.Column="5" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="5"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx13}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester Two Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx14" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester Two Paper 6-->
+        <ComboBox SelectionChanged="y2s2SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx14" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass14" Content="Pass" Grid.Column="6" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="6" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox14" Content="Completed" Grid.Column="6" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="6"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx14}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester Two Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx15" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester Two Paper 7-->
+        <ComboBox SelectionChanged="y2s2SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx15" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass15" Content="Pass" Grid.Column="7" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="7" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox15" Content="Completed" Grid.Column="7" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="6" Grid.Column="7"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx15}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
-        <!-- Year Two Semester Two Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx16" Grid.Column="8" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <!-- Year Two Semester Two Paper 8-->
+        <ComboBox SelectionChanged="y2s2SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx16" Grid.Column="8" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="6" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass16" Content="Pass" Grid.Column="8" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="6" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="8" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="6" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox16" Content="Completed" Grid.Column="8" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="6" VerticalAlignment="Top"/>
@@ -177,56 +177,56 @@
 
         <!-- Year Three -->
         <!-- Year Three Semester One Paper1-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx17" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx17" Grid.Column="1" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass17" Content="Pass" Grid.Column="1" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="1" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox17" Content="Completed" Grid.Column="1" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="1"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx17}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester One Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx18" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx18" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass18" Content="Pass" Grid.Column="2" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="2" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox18" Content="Completed" Grid.Column="2" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="2"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx18}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester One Paper 3-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx19" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx19" Grid.Column="3" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass19" Content="Pass" Grid.Column="3" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="3" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox19" Content="Completed" Grid.Column="3" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="3"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx19}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester One Paper 4-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx20" Grid.Column="4" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3s1SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx20" Grid.Column="4" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass20" Content="Pass" Grid.Column="4" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="4" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox20" Content="Completed" Grid.Column="4" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="4"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx20}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester Two Paper 1-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx21" Grid.Column="5" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3y2_SelectionChanged"  IsSynchronizedWithCurrentItem="False" x:Name="cbx21" Grid.Column="5" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass21" Content="Pass" Grid.Column="5" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="5" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox21" Content="Completed" Grid.Column="5" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="5"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx21}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester Two Paper 2-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx22" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3y2_SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx22" Grid.Column="6" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass22" Content="Pass" Grid.Column="6" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="6" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox22" Content="Completed" Grid.Column="6" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="6"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx22}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester Two Paper 3-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx23" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3y2_SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx23" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass23" Content="Pass" Grid.Column="7" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="7" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox23" Content="Completed" Grid.Column="7" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="7"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx23}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
         <!-- Year Three Semester Two Paper 4-->
-        <ComboBox IsSynchronizedWithCurrentItem="False" x:Name="cbx24" Grid.Column="8" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+        <ComboBox SelectionChanged="y3y2_SelectionChanged" IsSynchronizedWithCurrentItem="False" x:Name="cbx24" Grid.Column="8" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="8" VerticalAlignment="Top" Width="106" DisplayMemberPath="Paper_Name" ItemsSource="{Binding}" SelectedValuePath="Paper_ID" SelectedValue="{Binding Paper_ID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
         <RadioButton x:Name="pass24" Content="Pass" Grid.Column="8" HorizontalAlignment="Left" Margin="10,64,0,0" Grid.Row="8" VerticalAlignment="Top" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <RadioButton Content="Fail" Grid.Column="8" HorizontalAlignment="Left" Margin="54,64,0,0" Grid.Row="8" VerticalAlignment="Top" RenderTransformOrigin="-0.118,0.625" IsEnabled="{Binding IsChecked, ElementName=checkBox}"/>
         <CheckBox x:Name="checkBox24" Content="Completed" Grid.Column="8" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>

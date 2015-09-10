@@ -335,6 +335,8 @@ namespace SwitchSilver {
             
             private global::System.Data.DataColumn columnCompulsory;
             
+            private global::System.Data.DataColumn columnCredits;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PapersDataTable() {
@@ -426,6 +428,14 @@ namespace SwitchSilver {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CreditsColumn {
+                get {
+                    return this.columnCredits;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -461,7 +471,7 @@ namespace SwitchSilver {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PapersRow AddPapersRow(string Paper_ID, string Paper_Name, string Categories, int Year, string Prerequisite, string Description, bool Compulsory) {
+            public PapersRow AddPapersRow(string Paper_ID, string Paper_Name, string Categories, int Year, string Prerequisite, string Description, bool Compulsory, int Credits) {
                 PapersRow rowPapersRow = ((PapersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Paper_ID,
@@ -470,7 +480,8 @@ namespace SwitchSilver {
                         Year,
                         Prerequisite,
                         Description,
-                        Compulsory};
+                        Compulsory,
+                        Credits};
                 rowPapersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPapersRow);
                 return rowPapersRow;
@@ -507,6 +518,7 @@ namespace SwitchSilver {
                 this.columnPrerequisite = base.Columns["Prerequisite"];
                 this.columnDescription = base.Columns["Description"];
                 this.columnCompulsory = base.Columns["Compulsory"];
+                this.columnCredits = base.Columns["Credits"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,6 +538,8 @@ namespace SwitchSilver {
                 base.Columns.Add(this.columnDescription);
                 this.columnCompulsory = new global::System.Data.DataColumn("Compulsory", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCompulsory);
+                this.columnCredits = new global::System.Data.DataColumn("Credits", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCredits);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPaper_ID}, true));
                 this.columnPaper_ID.AllowDBNull = false;
@@ -1062,6 +1076,22 @@ namespace SwitchSilver {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Credits {
+                get {
+                    try {
+                        return ((int)(this[this.tablePapers.CreditsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Credits\' in table \'Papers\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePapers.CreditsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPaper_NameNull() {
                 return this.IsNull(this.tablePapers.Paper_NameColumn);
             }
@@ -1130,6 +1160,18 @@ namespace SwitchSilver {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCompulsoryNull() {
                 this[this.tablePapers.CompulsoryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCreditsNull() {
+                return this.IsNull(this.tablePapers.CreditsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCreditsNull() {
+                this[this.tablePapers.CreditsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1392,10 +1434,11 @@ namespace SwitchSilver.study4DataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Prerequisite", "Prerequisite");
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Compulsory", "Compulsory");
+            tableMapping.ColumnMappings.Add("Credits", "Credits");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Papers] WHERE (([Paper_ID] = @Original_Paper_ID) AND ((@IsNull_Paper_Name = 1 AND [Paper_Name] IS NULL) OR ([Paper_Name] = @Original_Paper_Name)) AND ((@IsNull_Categories = 1 AND [Categories] IS NULL) OR ([Categories] = @Original_Categories)) AND ((@IsNull_Compulsory = 1 AND [Compulsory] IS NULL) OR ([Compulsory] = @Original_Compulsory)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Prerequisite = 1 AND [Prerequisite] IS NULL) OR ([Prerequisite] = @Original_Prerequisite)) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Papers] WHERE (([Paper_ID] = @Original_Paper_ID) AND ((@IsNull_Paper_Name = 1 AND [Paper_Name] IS NULL) OR ([Paper_Name] = @Original_Paper_Name)) AND ((@IsNull_Categories = 1 AND [Categories] IS NULL) OR ([Categories] = @Original_Categories)) AND ((@IsNull_Compulsory = 1 AND [Compulsory] IS NULL) OR ([Compulsory] = @Original_Compulsory)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Prerequisite = 1 AND [Prerequisite] IS NULL) OR ([Prerequisite] = @Original_Prerequisite)) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)) AND ((@IsNull_Credits = 1 AND [Credits] IS NULL) OR ([Credits] = @Original_Credits)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paper_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Paper_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -1410,10 +1453,12 @@ namespace SwitchSilver.study4DataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prerequisite", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prerequisite", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Papers] ([Paper_ID], [Paper_Name], [Categories], [Compulsory], [Description], [Prerequisite], [Year]) VALUES (@Paper_ID, @Paper_Name, @Categories, @Compulsory, @Description, @Prerequisite, @Year);
-SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year FROM Papers WHERE (Paper_ID = @Paper_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Papers] ([Paper_ID], [Paper_Name], [Categories], [Compulsory], [Description], [Prerequisite], [Year], [Credits]) VALUES (@Paper_ID, @Paper_Name, @Categories, @Compulsory, @Description, @Prerequisite, @Year, @Credits);
+SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year, Credits FROM Papers WHERE (Paper_ID = @Paper_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paper_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paper_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1422,10 +1467,11 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prerequisite", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prerequisite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Papers] SET [Paper_ID] = @Paper_ID, [Paper_Name] = @Paper_Name, [Categories] = @Categories, [Compulsory] = @Compulsory, [Description] = @Description, [Prerequisite] = @Prerequisite, [Year] = @Year WHERE (([Paper_ID] = @Original_Paper_ID) AND ((@IsNull_Paper_Name = 1 AND [Paper_Name] IS NULL) OR ([Paper_Name] = @Original_Paper_Name)) AND ((@IsNull_Categories = 1 AND [Categories] IS NULL) OR ([Categories] = @Original_Categories)) AND ((@IsNull_Compulsory = 1 AND [Compulsory] IS NULL) OR ([Compulsory] = @Original_Compulsory)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Prerequisite = 1 AND [Prerequisite] IS NULL) OR ([Prerequisite] = @Original_Prerequisite)) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)));
-SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year FROM Papers WHERE (Paper_ID = @Paper_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Papers] SET [Paper_ID] = @Paper_ID, [Paper_Name] = @Paper_Name, [Categories] = @Categories, [Compulsory] = @Compulsory, [Description] = @Description, [Prerequisite] = @Prerequisite, [Year] = @Year, [Credits] = @Credits WHERE (([Paper_ID] = @Original_Paper_ID) AND ((@IsNull_Paper_Name = 1 AND [Paper_Name] IS NULL) OR ([Paper_Name] = @Original_Paper_Name)) AND ((@IsNull_Categories = 1 AND [Categories] IS NULL) OR ([Categories] = @Original_Categories)) AND ((@IsNull_Compulsory = 1 AND [Compulsory] IS NULL) OR ([Compulsory] = @Original_Compulsory)) AND ((@IsNull_Description = 1 AND [Description] IS NULL) OR ([Description] = @Original_Description)) AND ((@IsNull_Prerequisite = 1 AND [Prerequisite] IS NULL) OR ([Prerequisite] = @Original_Prerequisite)) AND ((@IsNull_Year = 1 AND [Year] IS NULL) OR ([Year] = @Original_Year)) AND ((@IsNull_Credits = 1 AND [Credits] IS NULL) OR ([Credits] = @Original_Credits)));
+SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year, Credits FROM Papers WHERE (Paper_ID = @Paper_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paper_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paper_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1434,6 +1480,7 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Prerequisite", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prerequisite", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paper_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Paper_Name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_Name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Paper_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paper_Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -1447,6 +1494,8 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Prerequisite", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Prerequisite", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Year", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Credits", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Credits", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1463,7 +1512,7 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Y" +
-                "ear FROM Papers";
+                "ear, Credits FROM Papers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1524,7 +1573,7 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Paper_ID, string Original_Paper_Name, string Original_Categories, global::System.Nullable<bool> Original_Compulsory, string Original_Description, string Original_Prerequisite, global::System.Nullable<int> Original_Year) {
+        public virtual int Delete(string Original_Paper_ID, string Original_Paper_Name, string Original_Categories, global::System.Nullable<bool> Original_Compulsory, string Original_Description, string Original_Prerequisite, global::System.Nullable<int> Original_Year, global::System.Nullable<int> Original_Credits) {
             if ((Original_Paper_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_Paper_ID");
             }
@@ -1579,6 +1628,14 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_Credits.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_Credits.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1599,7 +1656,7 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Paper_ID, string Paper_Name, string Categories, global::System.Nullable<bool> Compulsory, string Description, string Prerequisite, global::System.Nullable<int> Year) {
+        public virtual int Insert(string Paper_ID, string Paper_Name, string Categories, global::System.Nullable<bool> Compulsory, string Description, string Prerequisite, global::System.Nullable<int> Year, global::System.Nullable<int> Credits) {
             if ((Paper_ID == null)) {
                 throw new global::System.ArgumentNullException("Paper_ID");
             }
@@ -1642,6 +1699,12 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Credits.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Credits.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1662,7 +1725,23 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Paper_ID, string Paper_Name, string Categories, global::System.Nullable<bool> Compulsory, string Description, string Prerequisite, global::System.Nullable<int> Year, string Original_Paper_ID, string Original_Paper_Name, string Original_Categories, global::System.Nullable<bool> Original_Compulsory, string Original_Description, string Original_Prerequisite, global::System.Nullable<int> Original_Year) {
+        public virtual int Update(
+                    string Paper_ID, 
+                    string Paper_Name, 
+                    string Categories, 
+                    global::System.Nullable<bool> Compulsory, 
+                    string Description, 
+                    string Prerequisite, 
+                    global::System.Nullable<int> Year, 
+                    global::System.Nullable<int> Credits, 
+                    string Original_Paper_ID, 
+                    string Original_Paper_Name, 
+                    string Original_Categories, 
+                    global::System.Nullable<bool> Original_Compulsory, 
+                    string Original_Description, 
+                    string Original_Prerequisite, 
+                    global::System.Nullable<int> Original_Year, 
+                    global::System.Nullable<int> Original_Credits) {
             if ((Paper_ID == null)) {
                 throw new global::System.ArgumentNullException("Paper_ID");
             }
@@ -1705,59 +1784,73 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
+            if ((Credits.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Credits.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
             if ((Original_Paper_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_Paper_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Paper_ID));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Paper_ID));
             }
             if ((Original_Paper_Name == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Paper_Name));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Paper_Name));
             }
             if ((Original_Categories == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Categories));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Categories));
             }
             if ((Original_Compulsory.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Compulsory.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Compulsory.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Description == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Description));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Description));
             }
             if ((Original_Prerequisite == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Prerequisite));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Prerequisite));
             }
             if ((Original_Year.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Year.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_Year.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Credits.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Credits.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1779,8 +1872,8 @@ SELECT Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Paper_Name, string Categories, global::System.Nullable<bool> Compulsory, string Description, string Prerequisite, global::System.Nullable<int> Year, string Original_Paper_ID, string Original_Paper_Name, string Original_Categories, global::System.Nullable<bool> Original_Compulsory, string Original_Description, string Original_Prerequisite, global::System.Nullable<int> Original_Year) {
-            return this.Update(Original_Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year, Original_Paper_ID, Original_Paper_Name, Original_Categories, Original_Compulsory, Original_Description, Original_Prerequisite, Original_Year);
+        public virtual int Update(string Paper_Name, string Categories, global::System.Nullable<bool> Compulsory, string Description, string Prerequisite, global::System.Nullable<int> Year, global::System.Nullable<int> Credits, string Original_Paper_ID, string Original_Paper_Name, string Original_Categories, global::System.Nullable<bool> Original_Compulsory, string Original_Description, string Original_Prerequisite, global::System.Nullable<int> Original_Year, global::System.Nullable<int> Original_Credits) {
+            return this.Update(Original_Paper_ID, Paper_Name, Categories, Compulsory, Description, Prerequisite, Year, Credits, Original_Paper_ID, Original_Paper_Name, Original_Categories, Original_Compulsory, Original_Description, Original_Prerequisite, Original_Year, Original_Credits);
         }
     }
     
