@@ -466,7 +466,7 @@ namespace SwitchSilver
                     paperssofar.Add((YearTwoSemesterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
                 }
             }
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
             {
                 paperssofar.Add("CR240");
             }
@@ -495,7 +495,7 @@ namespace SwitchSilver
                 }
             }
 
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
             {
                 paperssofar.Add("CR285");
             }
@@ -644,7 +644,7 @@ namespace SwitchSilver
                     paperssofar.Add((YearTwoSemesterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
                 }
             }
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
             {
                 paperssofar.Add("CR240");
             }
@@ -673,7 +673,7 @@ namespace SwitchSilver
                 }
             }
 
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
             {
                 paperssofar.Add("CR285");
             }
@@ -775,7 +775,7 @@ namespace SwitchSilver
                     paperssofar.Add((YearTwoSemesterTwo[i].SelectedItem as study4DataSet.PapersRow).Paper_ID);
                 }
             }
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 240)
             {
                 paperssofar.Add("CR240");
             }
@@ -804,7 +804,7 @@ namespace SwitchSilver
                 }
             }
 
-            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet)?(x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
+            if (YearOneSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearOneSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearTwoSemesterTwo.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) + YearThreeSemesterOne.Sum(x => (x.SelectedItem is study4DataSet.PapersRow) ? (x.SelectedItem as study4DataSet.PapersRow).Credits:0) >= 285 && paperssofar.Contains("I301"))
             {
                 paperssofar.Add("CR285");
             }
