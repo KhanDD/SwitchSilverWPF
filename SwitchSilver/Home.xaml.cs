@@ -1383,7 +1383,7 @@ namespace SwitchSilver
             //        ipdone = true;
             //    }
             //    credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
-            }
+           // }
         }
 
         private void fail1_Unchecked(object sender, RoutedEventArgs e)
