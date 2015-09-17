@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="PaperBox.cs" />
+    <Compile Include="PaperRowToBrushConverter.cs" />
     <Compile Include="study4DataSet.cs">
       <DependentUpon>study4DataSet.xsd</DependentUpon>
       <SubType>Component</SubType>

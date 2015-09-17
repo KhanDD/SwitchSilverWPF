@@ -1232,6 +1232,7 @@ namespace SwitchSilver
         }
 
 
+        // Ryan & Khan
         private void paperSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             List<PaperBox> updated = AllSemesters.Where(x => x.Where(y => y.Paper == sender).Count() > 0).First();
@@ -1293,6 +1294,7 @@ namespace SwitchSilver
                     }
                     else
                     {
+                        paper.Completed.IsChecked = false;
                         paper.Fail.IsChecked = false;
                         paper.Pass.IsChecked = false;
                     }
@@ -1309,6 +1311,7 @@ namespace SwitchSilver
             }
         }
 
+        // Ryan & Khan
         private void completedUnchecked(object sender, RoutedEventArgs e)
         {
             List<PaperBox> updated = AllSemesters.Where(x => x.Where(y => y.Completed == sender).Count() > 0).First();
@@ -1317,78 +1320,136 @@ namespace SwitchSilver
             paper.Pass.IsChecked = false;
         }
 
+        // Ryan & Khan
         private void fail1_Checked(object sender, RoutedEventArgs e)
         {
-            //List<PaperBox> updated = AllSemesters.Where(x => x.Where(y => y.Fail == sender).Count() > 0).First();
-            //ComboBox papercbx = updated.Where(x => x.Fail == sender).First().Paper;
-            //credits = 0;
-            //bool ppdone = false;
-            //bool ipdone = false;
-            //for (int i = 0; i < AllSemesters.IndexOf(updated)+1; i++)
-            //{
-            //    if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
-            //    {
-            //        ppdone = true;
-            //    }
-            //    if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
-            //    {
-            //        ipdone = true;
-            //    }
-            //    credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
-            //}
-            //for (int i = AllSemesters.IndexOf(updated)+1; i < AllSemesters.Count; i++)
-            //{
-            //    List<string> semester = i % 2 == 0 ? Semester1 : Semester2;
-            //    List<study4DataSet.PapersRow> add = new List<study4DataSet.PapersRow>();
-            //    List<study4DataSet.PapersRow> remove = new List<study4DataSet.PapersRow>();
-            //    if (i > Math.Max(AllSemesters.IndexOf(updated), 1))
-            //    {
-            //        add.AddRange(papersDataSet.Papers.Where(x => e.AddedItems.Cast<study4DataSet.PapersRow>().Where(y => y.Paper_ID == x.Prerequisite).Count() > 0 && semester.Contains(x.Paper_ID) && x.Year <= 1 + i / 2));
-            //        remove.AddRange(papersDataSet.Papers.Where(x => e.RemovedItems.Cast<study4DataSet.PapersRow>().Where(y => y.Paper_ID == x.Prerequisite).Count() > 0));
-            //    }
+            List<PaperBox> updated = AllSemesters.Where(x => x.Where(y => y.Fail == sender).Count() > 0).First();
+            ComboBox papercbx = updated.Where(x => x.Fail == sender).First().Paper;
+            credits = 0;
+            bool ppdone = false;
+            bool ipdone = false;
+            for (int i = 0; i < AllSemesters.IndexOf(updated) + 1; i++)
+            {
+                if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
+                {
+                    ppdone = true;
+                }
+                if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
+                {
+                    ipdone = true;
+                }
+                credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
+            }
+            for (int i = AllSemesters.IndexOf(updated) + 1; i < AllSemesters.Count; i++)
+            {
+                List<string> semester = i % 2 == 0 ? Semester1 : Semester2;
+                List<study4DataSet.PapersRow> add = new List<study4DataSet.PapersRow>();
+                List<study4DataSet.PapersRow> remove = new List<study4DataSet.PapersRow>();
 
-            //    add.AddRange(e.RemovedItems.Cast<study4DataSet.PapersRow>());
-            //    remove.AddRange(e.AddedItems.Cast<study4DataSet.PapersRow>());
-            //    if (!ppdone && credits >= 240)
-            //    {
-            //        if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR240").Count() == 0)
-            //            add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
-            //    }
-            //    else
-            //    {
-            //        remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
-            //    }
-            //    if (!ipdone && ppdone && credits >= 285)
-            //    {
-            //        if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR285").Count() == 0)
-            //            add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
-            //    }
-            //    else
-            //    {
-            //        remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
-            //    }
-            //    foreach (var paper in AllSemesters[i])
-            //    {
-            //            List<study4DataSet.PapersRow> items = paper.Paper.Items.Cast<study4DataSet.PapersRow>().ToList();
-            //            items.RemoveAll(x => remove.Contains(x));
-            //            items.AddRange(add);
-            //            paper.Paper.ItemsSource = items.Distinct();
-            //    }
-            //    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
-            //    {
-            //        ppdone = true;
-            //    }
-            //    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
-            //    {
-            //        ipdone = true;
-            //    }
-            //    credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
-           // }
+                if (semester.Contains((papercbx.SelectedItem as study4DataSet.PapersRow).Paper_ID))
+                    add.Add(papercbx.SelectedItem as study4DataSet.PapersRow);
+                remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == (cbx1.SelectedItem as study4DataSet.PapersRow).Paper_ID));
+                if (!ppdone && credits >= 240)
+                {
+                    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR240").Count() == 0)
+                        add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
+                }
+                else
+                {
+                    remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
+                }
+                if (!ipdone && ppdone && credits >= 285)
+                {
+                    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR285").Count() == 0)
+                        add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
+                }
+                else
+                {
+                    remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
+                }
+                foreach (var paper in AllSemesters[i])
+                {
+                    List<study4DataSet.PapersRow> items = paper.Paper.Items.Cast<study4DataSet.PapersRow>().ToList();
+                    items.RemoveAll(x => remove.Contains(x));
+                    items.AddRange(add);
+                    paper.Paper.ItemsSource = items.Distinct();
+                }
+                if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
+                {
+                    ppdone = true;
+                }
+                if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
+                {
+                    ipdone = true;
+                }
+                credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
+            }
         }
 
+        // Ryan & Khan
         private void fail1_Unchecked(object sender, RoutedEventArgs e)
         {
+            List<PaperBox> updated = AllSemesters.Where(x => x.Where(y => y.Fail == sender).Count() > 0).First();
+            ComboBox papercbx = updated.Where(x => x.Fail == sender).First().Paper;
+            credits = 0;
+            bool ppdone = false;
+            bool ipdone = false;
+            for (int i = 0; i < AllSemesters.IndexOf(updated) + 1; i++)
+            {
+                if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
+                {
+                    ppdone = true;
+                }
+                if (AllSemesters[i].Where(x => x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
+                {
+                    ipdone = true;
+                }
+                credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
+            }
+            for (int i = AllSemesters.IndexOf(updated) + 1; i < AllSemesters.Count; i++)
+            {
+                List<string> semester = i % 2 == 0 ? Semester1 : Semester2;
+                List<study4DataSet.PapersRow> add = new List<study4DataSet.PapersRow>();
+                List<study4DataSet.PapersRow> remove = new List<study4DataSet.PapersRow>();
 
+
+                remove.Add(papercbx.SelectedItem as study4DataSet.PapersRow);
+                add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == (cbx1.SelectedItem as study4DataSet.PapersRow).Paper_ID && semester.Contains(x.Paper_ID)));
+                if (!ppdone && credits >= 240)
+                {
+                    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR240").Count() == 0)
+                        add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
+                }
+                else
+                {
+                    remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR240"));
+                }
+                if (!ipdone && ppdone && credits >= 285)
+                {
+                    if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Prerequisite == "CR285").Count() == 0)
+                        add.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
+                }
+                else
+                {
+                    remove.AddRange(papersDataSet.Papers.Where(x => x.Prerequisite == "CR285"));
+                }
+                foreach (var paper in AllSemesters[i])
+                {
+                    List<study4DataSet.PapersRow> items = paper.Paper.Items.Cast<study4DataSet.PapersRow>().ToList();
+                    items.RemoveAll(x => remove.Contains(x));
+                    items.AddRange(add);
+                    paper.Paper.ItemsSource = items.Distinct();
+                }
+                if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I301").Count() > 0)
+                {
+                    ppdone = true;
+                }
+                if (AllSemesters[i].Where(x => x.Fail.IsChecked != true && x.Paper.SelectedItem is study4DataSet.PapersRow && (x.Paper.SelectedItem as study4DataSet.PapersRow).Paper_ID == "I302").Count() > 0)
+                {
+                    ipdone = true;
+                }
+                credits += AllSemesters[i].Sum(x => x.Paper.SelectedItem is study4DataSet.PapersRow ? (x.Paper.SelectedItem as study4DataSet.PapersRow).Credits : 0);
+            }
         }
     }
 }

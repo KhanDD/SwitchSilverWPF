@@ -10,6 +10,14 @@
     <Page.Resources>
         <local:study4DataSet x:Key="study4DataSet"/>
         <CollectionViewSource x:Key="papersViewSource" Source="{Binding Papers, Source={StaticResource study4DataSet}}"/>
+        <local:PaperRowToBrushConverter x:Key="paperRowToBrushConverter"/>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Foreground">
+                <Setter.Value>
+                    <Binding Path="Content" RelativeSource="{RelativeSource Self}" Converter="{StaticResource paperRowToBrushConverter}"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
     <Grid DataContext="{StaticResource papersViewSource}">
 
@@ -35,7 +43,7 @@
             <RowDefinition Height="165*"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="165*"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <Image Grid.ColumnSpan="10" HorizontalAlignment="Left" Height="39" Margin="0,1,0,0" Grid.Row="3" VerticalAlignment="Top" Width="1050" Source="LinesOnAWhiteBackground.PNG" Stretch="UniformToFill"/>
         <Image Grid.ColumnSpan="10" HorizontalAlignment="Left" Height="39" Margin="0,1,0,0" Grid.Row="5" VerticalAlignment="Top" Width="1050" Source="LinesOnAWhiteBackground.PNG" Stretch="UniformToFill"/>
@@ -50,7 +58,7 @@
         <Border BorderBrush="#193385" BorderThickness="0,0,0,1" Grid.ColumnSpan="10" HorizontalAlignment="Left" Height="4" Grid.Row="3" VerticalAlignment="Bottom" Width="1050" Margin="0,0,0,0"/>
         <Label Content="Year Two" Grid.Column="1" HorizontalAlignment="Left" Margin="0,1,0,0" Grid.Row="5" VerticalAlignment="Top" FontSize="20" Foreground="#193385" FontFamily="Segoe UI Semibold"/>
         <Label Content="Year Three" Grid.Column="1" HorizontalAlignment="Left" Margin="0,1,0,0" Grid.Row="7" VerticalAlignment="Top" FontSize="20" Foreground="#193385" FontFamily="Segoe UI Semibold"/>
-        <Rectangle Grid.ColumnSpan="10" Fill="#FF0E1D4D" HorizontalAlignment="Left" Height="20" Stroke="#193385" VerticalAlignment="Top" Width="1050" Grid.Row="9"/>
+        <Rectangle Grid.ColumnSpan="10" Fill="#FF0E1D4D" HorizontalAlignment="Left" Height="70" Stroke="#193385" VerticalAlignment="Top" Width="1050" Grid.Row="9"/>
         <Rectangle Grid.ColumnSpan="8" Fill="#193385" HorizontalAlignment="Left" Height="5" Stroke="#193385" VerticalAlignment="Top" Width="836" Grid.Row="2"/>
         <Rectangle Grid.ColumnSpan="3" Fill="#FF7F00" HorizontalAlignment="Left" Margin="73,0,0,0" Height="5" Grid.Row="2" Stroke="#FF7F00" VerticalAlignment="Top" Width="200" Grid.Column="7"/>
 
@@ -232,6 +240,38 @@
         <CheckBox x:Name="checkBox24" Content="Completed" Grid.Column="8" HorizontalAlignment="Left" Margin="10,37,0,0" Grid.Row="8" VerticalAlignment="Top"/>
         <TextBlock Grid.Row="8" Grid.Column="8"  Margin="10,85,0,0"><Hyperlink Click="Button_Click" TextDecorations="{x:Null}" DataContext="{Binding SelectedItem, ElementName=cbx24}"><Run Text="More info..."/></Hyperlink></TextBlock>
 
+        
+        <!-- Ryan & Khan -->
+        <Grid Grid.ColumnSpan="10" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="1050" Grid.Row="9">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="33*"/>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Categories:" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="0" VerticalAlignment="Center"   FontFamily="Segoe UI Semibold" Foreground="White" Height="27" Margin="0,0,0,20" Grid.RowSpan="2"/>
 
+            <CheckBox IsChecked="True" Content="Analysis" Foreground="White" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+            <CheckBox IsChecked="True" Content="Database" Foreground="White" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"/>
+
+            <CheckBox IsChecked="True" Content="Management" Foreground="White" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"/>
+            <CheckBox IsChecked="True" Content="Networking" Foreground="White" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center"/>
+
+            <CheckBox IsChecked="True" Content="Programming" Foreground="White" Grid.Column="3" Grid.Row="1" VerticalAlignment="Center"/>
+            <CheckBox IsChecked="True" Content="Web Design" Foreground="White" Grid.Column="3" Grid.Row="2" VerticalAlignment="Center"/>
+
+            <CheckBox IsChecked="True" Content="Practical Experience" Foreground="White" Grid.Column="4" Grid.Row="1" VerticalAlignment="Center"/>
+        </Grid>
     </Grid>
 </Page>
