@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IndexToBoolConverter.cs" />
     <Compile Include="PaperBox.cs" />
     <Compile Include="PaperRowToBrushConverter.cs" />
     <Compile Include="study4DataSet.cs">
@@ -129,7 +130,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="ucol-logo.jpg">

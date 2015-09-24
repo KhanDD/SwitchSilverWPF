@@ -4,31 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-using System.Windows.Media;
 
 namespace SwitchSilver
 {
     /// <summary>
-    /// Used for converting an paper (PaperRow) to a Solid Brush colour based on compulsory status
+    /// Used to convert the index of a combo box to bool
     /// </summary>
-    class PaperRowToBrushConverter : IValueConverter
+    class IndexToBoolConverter : IValueConverter
     {
         #region IValueConverter Members
 
         /// <summary>
-        /// Converts a paper row to a Solid Brush colour based on compulsory status
+        /// Converts the index of a combo box to bool
         /// </summary>
-        /// <param name="value">Item to be converted</param>
+        /// <param name="value">the index to be converted</param>
         /// <param name="targetType"></param>
         /// <param name="parameter"></param>
         /// <param name="culture"></param>
-        /// <returns>red if compulsory, black if not</returns>
+        /// <returns>true if greater than -1, false otherwise</returns>
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            // if nothing selected or not a paper row return black
-            if (value == null || !(value is study4DataSet.PapersRow)) return Brushes.Black;
-
-            return (value as study4DataSet.PapersRow).Compulsory ? Brushes.Red : Brushes.Black;
+            return (value is int) && (int)value > -1; 
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
