@@ -62,8 +62,8 @@ namespace SwitchSilver
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var details = new Details((((Hyperlink)sender).DataContext) as SwitchSilver.study4DataSet.PapersRow);
-            this.NavigationService.Navigate(details);
+            pageDisplayFrame.Content = new Details((((Hyperlink)sender).DataContext) as SwitchSilver.study4DataSet.PapersRow, pageDisplayFrame);
+            pageDisplayFrame.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -73,6 +73,7 @@ namespace SwitchSilver
         /// <param name="e"></param>
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            test.Content = System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
             credits = 0;
 
             // Creates the lists for each semester

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1050" ShowsNavigationUI="False"
-	Title="Details">
+	Title="Details" Background="White" >
 
     <Grid>
         <Rectangle Fill="#FF7F00" HorizontalAlignment="Left" Margin="0,0,0,0" Height="10" Grid.Row="0" Stroke="#FF7F00" VerticalAlignment="Top" Width="200"/>
@@ -16,7 +16,7 @@
 
         <Rectangle Fill="#193385" HorizontalAlignment="Left" Height="5" Stroke="#193385" VerticalAlignment="Top" Width="836" Margin="0,110,0,0"/>
         <Rectangle Fill="#FF7F00" HorizontalAlignment="Left" Margin="841,110,0,0" Height="5" Stroke="#FF7F00" VerticalAlignment="Top" Width="209"/>
-        <Button Click="Button_Click" Content="Button" HorizontalAlignment="Left" Margin="540,272,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnHome" Content="Button" HorizontalAlignment="Left" Margin="540,272,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Page>

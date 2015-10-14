@@ -20,15 +20,12 @@ namespace SwitchSilver
     /// </summary>
     public partial class Details : Page
     {
-        public Details(SwitchSilver.study4DataSet.PapersRow paper)
+        public Details(SwitchSilver.study4DataSet.PapersRow paper, Frame frame)
         {
             InitializeComponent();
             this.DataContext = paper;
+            btnHome.Click += (s, e) => frame.Visibility = Visibility.Hidden;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.GoBack();
-        }
     }
 }
