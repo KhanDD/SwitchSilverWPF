@@ -60,6 +60,11 @@ namespace SwitchSilver
             categories = new List<string>();
         }
 
+        /// <summary>
+        /// Displays the more details page for a paper.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             pageDisplayFrame.Content = new Details((((Hyperlink)sender).DataContext) as SwitchSilver.study4DataSet.PapersRow, pageDisplayFrame);

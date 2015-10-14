@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BoolToStringConverter.cs" />
     <Compile Include="IndexToBoolConverter.cs" />
     <Compile Include="PaperBox.cs" />
     <Compile Include="PaperRowToBrushConverter.cs" />
